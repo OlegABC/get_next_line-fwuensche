@@ -6,7 +6,7 @@
 /*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 15:52:13 by fwuensch          #+#    #+#             */
-/*   Updated: 2018/12/12 19:57:34 by fwuensch         ###   ########.fr       */
+/*   Updated: 2018/12/17 15:55:06 by fwuensch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int				get_next_line(int const fd, char **line)
 	size_t		dist;
 	static char	buf[OPEN_MAX][BUFF_SIZE + 1];
 
-	if (fd < 0 || !line)
+	if (fd < 0 || !line || fd > OPEN_MAX)
 		return (-1);
 	if (!(*line = ft_strnew(1)))
 		return (-1);
